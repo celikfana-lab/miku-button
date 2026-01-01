@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Miku Button
+Comment=Click for chaos (Miku or Engineer)
+Icon=face-smile
+Type=Service
+
+X-KDE-ServiceTypes=Plasma/Applet
+X-KDE-PluginInfo-Name=miku-button
+X-KDE-PluginInfo-Category=Fun
+X-KDE-PluginInfo-Version=0.0.3
+X-KDE-PluginInfo-License=GPL-3.0-only
+X-KDE-PluginInfo-EnabledByDefault=true
+
+# 🔧 CONFIG SYSTEM (THE IMPORTANT PART)
+X-KDE-ConfigKeys=volume,mikuChance
+X-KDE-ConfigModule=contents/config/main.xml
+
+# 🧠 PLASMA RUNTIME
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=contents/ui/main.qml
