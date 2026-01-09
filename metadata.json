@@ -1,14 +1,16 @@
 {
-  "KPlugin": {
-    "Id": "miku-button",
-    "Name": "Miku Button",
-    "Description": "click for miku",
-    "Version": "0.0.3",
-    "Category": "Fun",
-    "EnabledByDefault": true
-  },
-  "KPackageStructure": "Plasma/Applet",
-  "X-Plasma-API": "declarativeappletscript",
-  "X-Plasma-MainScript": "contents/ui/main.qml"
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            { "Name": "Celikfana-lab" }
+        ],
+        "Category": "Fun",
+        "Description": "Click for chaos (Miku or Engineer)",
+        "Icon": "face-smile",
+        "Id": "miku-button",
+        "License": "GPL-3.0-only",
+        "Name": "Miku Button",
+        "Version": "1.0.0"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
 }
-
