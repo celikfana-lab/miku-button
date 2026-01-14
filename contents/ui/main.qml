@@ -23,11 +23,13 @@ PlasmoidItem {
     property url mikuSound: plasmoid.configuration.mikuSound || Qt.resolvedUrl("../sounds/miku-fixed.wav")
     property url engineerSound: plasmoid.configuration.engineerSound || Qt.resolvedUrl("../sounds/engineer.wav")
 
+    // 🖼️ IMAGE
     AnimatedImage {
         id: display
         anchors.fill: parent
         fillMode: Image.PreserveAspectFit
         playing: true
+        speed: 1.0
         source: Qt.resolvedUrl("../images/miku.png")
     }
 
@@ -40,6 +42,7 @@ PlasmoidItem {
 
     function resetToIdle() {
         root.isPlaying = false
+        display.speed = 1.0
         display.source = Qt.resolvedUrl("../images/miku.png")
         display.playing = true
     }
@@ -74,10 +77,11 @@ PlasmoidItem {
     }
 
     Connections {
-        target: sound
-        function onPlayingChanged() {
-            if (!sound.playing && root.isPlaying)
+        target: player
+        function onPlaybackStateChanged() {
+            if (player.playbackState === MediaPlayer.StoppedState && root.isPlaying) {
                 resetToIdle()
+            }
         }
     }
 }
